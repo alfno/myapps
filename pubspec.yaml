@@ -36,10 +36,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   get: ^4.6.6
+  sqflite: ^2.3.2
+  path: ^1.8.3 
   flutter_svg: ^1.0.3
   animated_bottom_navigation_bar: ^1.0.0
   curved_navigation_bar: ^1.0.3
   carousel_slider: ^5.0.0
+
 
 dev_dependencies:
   flutter_test:

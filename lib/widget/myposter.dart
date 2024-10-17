@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-
 class MyPoster extends StatelessWidget {
   final String image;
   final String title;
-  final String rating; 
+  final String rating;
 
   const MyPoster({
     Key? key,
@@ -18,11 +17,14 @@ class MyPoster extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.asset(
-          image,
-          width: 180,
-          height: 230,
-          fit: BoxFit.cover,
+        ClipRRect( 
+          borderRadius: BorderRadius.circular(10), 
+          child: Image.asset(
+            image,
+            width: 180,
+            height: 230,
+            fit: BoxFit.cover,
+          ),
         ),
         const SizedBox(height: 8),
         Text(

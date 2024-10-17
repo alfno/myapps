@@ -20,35 +20,26 @@ class MyCategory extends StatefulWidget {
 }
 
 class _MyCategoryState extends State<MyCategory> {
-  bool isHovered = false; 
-
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) => setState(() => isHovered = true), 
-      onExit: (_) => setState(() => isHovered = false), 
-      child: AnimatedScale(
-        scale: isHovered ? 1.1 : 1.0, 
-        duration: Duration(milliseconds: 200), 
-        child: SizedBox(
-          height: 30, 
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: widget.backgroundColor, 
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8), 
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 10), 
-            ),
-            onPressed: widget.onPressed, 
-            child: Text(
-              widget.label,
-              style: TextStyle(
-                fontSize: 12, 
-                fontFamily: 'MontserratMedium', 
-                color: widget.textColor, 
-              ),
-            ),
+    return SizedBox(
+      height: 25,  // Mengatur tinggi button
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: widget.backgroundColor, 
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8), 
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 4), 
+          // Mengurangi padding untuk memperkecil tombol
+        ),
+        onPressed: widget.onPressed, 
+        child: Text(
+          widget.label,
+          style: TextStyle(
+            fontSize: 10, // Mengecilkan ukuran font
+            fontFamily: 'MontserratMedium', 
+            color: widget.textColor, 
           ),
         ),
       ),

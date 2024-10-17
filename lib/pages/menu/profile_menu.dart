@@ -5,7 +5,6 @@ import 'package:myapps/widget/myfonts.dart';
 import 'package:myapps/widget/myjudul.dart';
 import 'package:myapps/widget/mylogo.dart';
 
-
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({super.key});
 
@@ -31,68 +30,76 @@ class ProfileMenu extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            
-            Center(
-              child: CircleAvatar(
-                radius: 70,
-                backgroundImage: AssetImage('assets/pp.jpg'), 
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: CircleAvatar(
+                  radius: 70,
+                  backgroundImage: AssetImage('assets/pp.jpg'),
+                ),
               ),
-            ),
-            SizedBox(height: 16),
-
-            
-            Center(
-              child: CustomTextH1(
-                text: "Admin", 
-                
+              SizedBox(height: 16),
+              Center(
+                child: CustomTextH1(
+                  text: "Admin",
+                ),
               ),
-            ),
-            SizedBox(height: 8),
-
-            
-            ListTile(
-              leading: Icon(Icons.person),
-              title: CustomText(text: "Edit Profil"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.notifications),
-              title: CustomText(text: "Notifikasi"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.lock),
-              title: CustomText(text: "Keamanan"),
-              onTap: () {},
-            ),
-            SizedBox(height: 20),
-
-            
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  
-                  Get.snackbar(
-                    'Log Out', 
-                    'Tunggu 2 detik, Log out nih.', 
-                    snackPosition: SnackPosition.BOTTOM,
-                    colorText: Colors.black,
-                    duration: Duration(seconds: 2),
-                  );
-
-                  Future.delayed(Duration(seconds: 2), () {
-                    Get.toNamed('/');
-                  });
-                },
-                child: CustomText(text: "Log Out"), 
+              SizedBox(height: 8),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: CustomText(text: "Edit Profil"),
+                onTap: () {},
               ),
-            ),
-          ],
+              ListTile(
+                leading: Icon(Icons.notifications),
+                title: CustomText(text: "Notifikasi"),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.lock),
+                title: CustomText(text: "Keamanan"),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.history),
+                title: CustomText(text: "Riwayat Menonton"),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.help_outline),
+                title: CustomText(text: "Bantuan"),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.info),
+                title: CustomText(text: "Tentang Aplikasi"),
+                onTap: () {},
+              ),
+              SizedBox(height: 20),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Get.snackbar(
+                      'Log Out',
+                      'Tunggu 2 detik, Log out nih.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      colorText: Colors.black,
+                      duration: Duration(seconds: 2),
+                    );
+
+                    Future.delayed(Duration(seconds: 2), () {
+                      Get.toNamed('/');
+                    });
+                  },
+                  child: CustomText(text: "Log Out"),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

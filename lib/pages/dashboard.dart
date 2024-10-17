@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:myapps/controllers/dashboard_controller.dart';
+import 'package:myapps/controllers/reminder_controller.dart';
 import 'package:myapps/pages/menu/coming_soon_menu.dart';
 import 'package:myapps/pages/menu/home_menu.dart';
 import 'package:myapps/pages/menu/profile_menu.dart';
+import 'package:myapps/pages/menu/remindme_menu.dart';
 import 'package:myapps/widget/mycolor.dart';
 
 
@@ -15,8 +17,9 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final DashboardController dashboardController = Get.find();
+    Get.put(ReminderController());
 
-    final List<Widget> menus = [HomeMenu(), ComingSoonMenu(), ProfileMenu()];
+    final List<Widget> menus = [HomeMenu(), ComingSoonMenu(), ReminderMenu(), ProfileMenu()];
 
     return Obx(() {
       return Scaffold(
@@ -30,10 +33,11 @@ class DashboardPage extends StatelessWidget {
           items: const [
             Icon(Icons.movie_creation, size: 30, color: Colors.white),
             Icon(Icons.play_circle_fill, size: 30, color: Colors.white),
+            Icon(Icons.bookmark, size: 30, color: Colors.white),
             Icon(Icons.person, size: 30, color: Colors.white),
           ],
           animationCurve: Curves.easeInOut,
-          animationDuration: Duration(milliseconds: 300),
+          animationDuration: Duration(milliseconds: 500),
         ),
       );
     });

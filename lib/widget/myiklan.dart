@@ -13,7 +13,7 @@ class MyIklan extends StatelessWidget {
         autoPlay: true,
         autoPlayInterval: const Duration(seconds: 3),
         enlargeCenterPage: true,
-        viewportFraction: 0.6,
+        viewportFraction: 0.7,
       ),
       items: IklanData.imageList.map((IklanModel) {
         return Builder(

@@ -89,7 +89,7 @@ class _HomeMenuState extends State<HomeMenu> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomTextH1(text: "Now playing"),
+                  CustomTextH1(text: "Now playing", fontSize: 23,),
                   MyCategory(label: "Action", onPressed: () {}),
                   MyCategory(label: "Drama", onPressed: () {}),
                   MyCategory(label: "Cartoon", onPressed: () {}),
@@ -105,7 +105,7 @@ class _HomeMenuState extends State<HomeMenu> {
                   crossAxisCount: 3,
                   crossAxisSpacing: 10.0, //kolom
                   mainAxisSpacing: 10.0, //baris
-                  childAspectRatio: 0.8,
+                  childAspectRatio: 0.7,
                 ),
                 itemCount: 33,  
                 itemBuilder: (context, index) {
